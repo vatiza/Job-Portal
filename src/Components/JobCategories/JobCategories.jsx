@@ -1,7 +1,6 @@
 
 const JobCategories = ({ category }) => {
     const { logo, category_name, availability } = category;
-    console.log(category)
 
     return (
         <div className="border w-auto p-4 mt-3 bg-violet-100 rounded-lg">

@@ -5,10 +5,18 @@ import JobCategories from '../JobCategories/JobCategories';
 const Home = () => {
     const [cetegories, setCetegories] = useState([]);
     useEffect(() => {
-        fetch('https://20b6a2a201344184921688f7618c57d4.api.mockbin.io/')
+        fetch('https://20b6a2a201344184921688f7618c57d4.api.mockbin.io')
             .then(res => res.json())
             .then(data => setCetegories(data))
+    }, []);
+
+    const [jobs, setJobs] = useState([]);
+    useEffect(() => {
+        fetch('https://494ae765e0a24a0e8308173fc49ce17a.api.mockbin.io')
+            .then(res => res.json())
+            .then(data => setJobs(data))
     }, [])
+    console.log(jobs)
 
     return (
         <div>
@@ -23,7 +31,7 @@ const Home = () => {
                 </div>
             </div>
             {/* Job cetegories section */}
-            <div className='text-center mt-5' >
+            <div className=' text-center mt-5' >
                 <h1 className='text-5xl font-bold'>Job Category List</h1>
                 <p className='mt-3'>Explore thousands of job opportunities with all the information you need. Its your future</p>
             </div>
@@ -36,6 +44,14 @@ const Home = () => {
 
                     ></JobCategories>)
                 }
+            </div>
+            {/* Featured Jobs */}
+            <div className='text-center mt-3'>
+                <h1 className='text-5xl font-bold'>Featured Jobs</h1>
+                <p className='mt-3'>Explore thousands of job opportunities with all the information you need. Its your future</p>
+            </div>
+            <div>
+
             </div>
 
         </div>
