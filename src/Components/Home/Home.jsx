@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import userimg from '../../assets/images/user.png'
 import JobCategories from '../JobCategories/JobCategories';
 import Jobs from '../Jobs/Jobs';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
     const [cetegories, setCetegories] = useState([]);
@@ -50,7 +51,7 @@ const Home = () => {
                 <h1 className='text-5xl font-bold'>Featured Jobs</h1>
                 <p className='mt-3'>Explore thousands of job opportunities with all the information you need. Its your future</p>
             </div>
-            <div>
+            <div className=' grid grid-cols-2 ml-48 mr-48'>
                 {
                     jobs.map(job => <Jobs
                         key={job.id}
@@ -59,7 +60,10 @@ const Home = () => {
                 }
 
             </div>
-
+            {/* Footer section */}
+            <div>
+                <Footer></Footer>
+            </div>
         </div>
     );
 };
