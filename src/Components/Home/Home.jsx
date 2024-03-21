@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import userimg from '../../assets/images/user.png'
 import JobCategories from '../JobCategories/JobCategories';
+import Jobs from '../Jobs/Jobs';
 
 const Home = () => {
     const [cetegories, setCetegories] = useState([]);
@@ -16,7 +17,6 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [])
-    console.log(jobs)
 
     return (
         <div>
@@ -35,7 +35,7 @@ const Home = () => {
                 <h1 className='text-5xl font-bold'>Job Category List</h1>
                 <p className='mt-3'>Explore thousands of job opportunities with all the information you need. Its your future</p>
             </div>
-            <div className='flex gap-5 justify-center'>
+            <div className='flex gap-5 mt-4 justify-center'>
 
                 {
                     cetegories.map(category => <JobCategories
@@ -51,6 +51,12 @@ const Home = () => {
                 <p className='mt-3'>Explore thousands of job opportunities with all the information you need. Its your future</p>
             </div>
             <div>
+                {
+                    jobs.map(job => <Jobs
+                        key={job.id}
+                        job={job}
+                    ></Jobs>)
+                }
 
             </div>
 
